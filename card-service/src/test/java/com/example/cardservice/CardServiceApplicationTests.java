@@ -1,4 +1,4 @@
-package com.example.card_service;
+package com.example.cardservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
