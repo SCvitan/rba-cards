@@ -20,4 +20,15 @@ public class ClientController {
         return service.saveClient(clientDTO);
     }
 
+    @GetMapping("/{oib}")
+    public ClientDTO getClient(@PathVariable String oib){
+        return service.getClient(oib);
+    }
+
+    @DeleteMapping
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteClient(@PathVariable String oib){
+        service.deleteClient(oib);
+    }
+
 }
