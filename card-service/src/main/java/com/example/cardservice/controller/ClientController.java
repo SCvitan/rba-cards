@@ -4,7 +4,6 @@ import com.example.cardservice.dto.ClientDTO;
 import com.example.cardservice.service.ClientService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -16,7 +15,7 @@ public class ClientController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public ClientDTO saveClient(@Validated @RequestBody ClientDTO clientDTO){
+    public ClientDTO saveClient(@RequestBody ClientDTO clientDTO){
         return service.saveClient(clientDTO);
     }
 
@@ -25,7 +24,7 @@ public class ClientController {
         return service.getClient(oib);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{oib}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteClient(@PathVariable String oib){
         service.deleteClient(oib);

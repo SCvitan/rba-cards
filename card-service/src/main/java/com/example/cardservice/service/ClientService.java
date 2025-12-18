@@ -7,11 +7,9 @@ import com.example.cardservice.exceptions.custom.ResourceNotFoundException;
 import com.example.cardservice.mapper.ClientMapper;
 import com.example.cardservice.model.Client;
 import com.example.cardservice.repository.ClientRepository;
-import jakarta.persistence.EntityNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -43,7 +41,7 @@ public class ClientService {
 
     private Client findClientByOIB(String oib){
         Client client = repository.findByOib(oib)
-                .orElseThrow(() -> new ResourceNotFoundException("Client with OIB: " + oib + "not found!"));
+                .orElseThrow(() -> new ResourceNotFoundException("Client with OIB: " + oib + " not found!"));
         return client;
     }
 
