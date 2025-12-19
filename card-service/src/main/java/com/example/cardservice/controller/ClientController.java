@@ -42,7 +42,6 @@ public class ClientController {
 
     @PostMapping("/card-status")
     public ResponseEntity<Void> sendStatus(@RequestParam String oib, @RequestParam StatusKartice status) {
-
         producer.sendStatus(oib, status);
         return ResponseEntity.ok().build();
     }
