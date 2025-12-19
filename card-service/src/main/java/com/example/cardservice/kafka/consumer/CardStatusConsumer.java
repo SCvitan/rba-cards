@@ -19,7 +19,7 @@ public class CardStatusConsumer {
     @KafkaListener(topics = "cardTopic", groupId = "card-service")
     public void consume(CardStatusResponse message) {
 
-        log.info("Card status update: {}", message);
+        log.info("Card status updated: {}", message.getStatus());
 
         try {
             clientService.updateStatus(
