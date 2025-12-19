@@ -20,6 +20,6 @@ public class Client {
     private String prezime;
     private String oib;
     @Enumerated(EnumType.STRING)
-    private StatusKartice statusKartice = StatusKartice.PENDING;
+    private StatusKartice statusKartice;
 
 }

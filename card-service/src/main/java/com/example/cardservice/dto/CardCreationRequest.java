@@ -5,6 +5,11 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class RequestOib {
+public class CardCreationRequest {
+
+    private String ime;
+    private String prezime;
     private String oib;
+    private String status;
+
 }
